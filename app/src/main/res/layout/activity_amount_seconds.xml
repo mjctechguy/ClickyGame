@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.mjctechguy.clickygame.amountSeconds"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/secondsToPlayText"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button30Seconds"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:text="@string/secondsToPlayText" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteY="20dp"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/button120Seconds"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/seconds120"
+        app:layout_constraintLeft_toLeftOf="@+id/button60Seconds"
+        app:layout_constraintRight_toRightOf="@+id/button60Seconds"
+        app:layout_constraintTop_toBottomOf="@+id/button60Seconds"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:text="@string/seconds120" />
+
+    <Button
+        android:id="@+id/button60Seconds"
+        android:layout_width="0dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/seconds60"
+        app:layout_constraintLeft_toLeftOf="@+id/button30Seconds"
+        app:layout_constraintRight_toRightOf="@+id/button30Seconds"
+        app:layout_constraintTop_toBottomOf="@+id/button30Seconds"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:text="@string/seconds60" />
+
+    <Button
+        android:id="@+id/button30Seconds"
+        android:layout_width="191dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/seconds30"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:text="@string/seconds30" />
+</android.support.constraint.ConstraintLayout>

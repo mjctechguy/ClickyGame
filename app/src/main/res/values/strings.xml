@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ClickyGame</string>
+    <string name="clickAmountText">Amount of Clicks:</string>
+    <string name="clickButton">Click Me!</string>
+    <string name="clickAmount">0</string>
+    <string name="timeText">Remaing Time</string>
+    <string name="timeAmount" />
+    <string name="startButton">Start</string>
+    <string name="secondsToPlayText">How many seconds to play?</string>
+    <string name="easyButton">Easy</string>
+    <string name="seconds30">30 seconds</string>
+    <string name="minuteOne">1 Mintue</string>
+    <string name="seconds120">120 Seconds</string>
+    <string name="seconds60">60 seconds</string>
+    <string name="restartButton">Restart Game</string>
+    <string name="app_view_name">Clicky The Game!</string>
+</resources>
