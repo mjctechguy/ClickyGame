@@ -37,7 +37,7 @@ public class amountSeconds extends AppCompatActivity {
 
             switch (v.getId()) {
                 case R.id.button30Seconds:
-                    intent.putExtra(amountOfSeconds,30);
+                    intent.putExtra(amountOfSeconds,5);
                     startActivity(intent);
                     break;
 

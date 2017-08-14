@@ -1,6 +1,7 @@
 package me.mjctechguy.clickygame;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -14,8 +15,10 @@ import android.widget.Toast;
 public class MainGame extends AppCompatActivity {
 
     private Activity activity;
+    private Context context;
 
     private Intent intent;
+    private Intent intentGameScore;
     private int secondsToUse;
 
     private TextView clickAmount;
@@ -34,11 +37,14 @@ public class MainGame extends AppCompatActivity {
         }
     };
 
+    public static final String gameScoreKey = "gameScoreKey";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
         activity = this;
+        context = getApplicationContext();
 
         intent = getIntent();
         secondsToUse = intent.getIntExtra(amountSeconds.amountOfSeconds, 0);
@@ -64,16 +70,10 @@ public class MainGame extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                clickButton.setEnabled(false);
-                if (secondsToUse == 30 && tally > 100) {
-                    Toast.makeText(activity, "Congrats on reaching over 100 clicks!", Toast.LENGTH_LONG).show();
-                } else if (secondsToUse == 60 && tally > 200) {
-                    Toast.makeText(activity, "Congrats on reaching over 200 clicks!", Toast.LENGTH_LONG).show();
-                } else if (secondsToUse == 120 && tally > 400) {
-                    Toast.makeText(activity, "Congrats on reaching over 400 clicks!", Toast.LENGTH_LONG).show();
-                }
-                timerStarted = false;
-                timerAmount.setText("Finshed!");
+                resetGame();
+                intentGameScore = new Intent(context,MainGameEnd.class);
+                intentGameScore.putExtra(gameScoreKey,tally);
+                startActivity(intentGameScore);
             }
         };
     }
@@ -89,13 +89,17 @@ public class MainGame extends AppCompatActivity {
     }
 
     private void resetGame() {
-        if(tally < 1){ return;}
-        tally = 0;
-        clickAmount.setText(String.valueOf(tally));
-        countDownTimer.cancel();
-        countDownTimer.start();
-        if (!clickButton.isEnabled()) {
-            clickButton.setEnabled(true);
+        if (tally != 0) {
+            tally = 0;
+            clickAmount.setText(String.valueOf(tally));
+            countDownTimer.cancel();
+            countDownTimer.start();
+            if (!clickButton.isEnabled()) {
+                clickButton.setEnabled(true);
+            }
+        } else {
+            return;
         }
+
     }
 }

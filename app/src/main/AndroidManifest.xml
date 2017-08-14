@@ -34,6 +34,12 @@
             android:parentActivityName=".MainActivity">
             >
         </activity>
+        <activity
+            android:name=".MainGameEnd"
+            android:label="Game Over"
+            android:parentActivityName=".MainGameEnd">
+            >
+        </activity>
     </application>
 
 </manifest>
