@@ -2,9 +2,12 @@ package me.mjctechguy.clickygame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IntegerRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class amountSeconds extends AppCompatActivity {
 
@@ -12,6 +15,10 @@ public class amountSeconds extends AppCompatActivity {
     private Button button30;
     private Button button60;
     private Button button120;
+    private Button buttonCustom;
+
+    private EditText customAmountOfTime;
+    private int customSecondsS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +33,12 @@ public class amountSeconds extends AppCompatActivity {
 
         button120 = (Button)findViewById(R.id.button120Seconds);
         button120.setOnClickListener(onClickListener);
+
+        buttonCustom = (Button) findViewById(R.id.customTimeInput);
+        buttonCustom.setOnClickListener(onClickListener);
+
+        customAmountOfTime = (EditText)  findViewById(R.id.customSeconds);
+
 
     }
 
@@ -50,6 +63,15 @@ public class amountSeconds extends AppCompatActivity {
                     intent.putExtra(amountOfSeconds,120);
                     startActivity(intent);
                     break;
+                case R.id.customTimeInput:
+                    customSecondsS = Integer.parseInt(customAmountOfTime.getText().toString());
+                    if(customSecondsS < 1 || customSecondsS > 500) {
+                        Toast.makeText(getApplicationContext(), "Please enter a number in seconds upto 500",Toast.LENGTH_SHORT).show();
+                    } else {
+                        intent.putExtra(amountOfSeconds,customSecondsS);
+                        startActivity(intent);
+                        break;
+                    }
             }
         }
     };

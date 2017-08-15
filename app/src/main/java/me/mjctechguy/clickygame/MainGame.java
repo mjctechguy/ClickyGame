@@ -70,7 +70,6 @@ public class MainGame extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                resetGame();
                 intentGameScore = new Intent(context,MainGameEnd.class);
                 intentGameScore.putExtra(gameScoreKey,tally);
                 startActivity(intentGameScore);

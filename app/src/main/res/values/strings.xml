@@ -14,5 +14,9 @@
     <string name="seconds60">60 seconds</string>
     <string name="restartButton">Restart Game</string>
     <string name="app_view_name">Clicky The Game!</string>
-    <string name="scoreText">Score:</string>
+    <string name="scoreText">Score</string>
+    <string name="mainMenuButton">Mainmenu</string>
+    <string name="customAmountOfTime">Custom amount of time</string>
+    <string name="amountOfTimeHitn">time in seconds</string>
+    <string name="customAmountButton">Submit Amount</string>
 </resources>
